@@ -82,7 +82,7 @@ const page: React.FC = () => {
         </nav>
       </header>
 
-      {/* today' quote and normal book list section */}
+      {/* today' quote and normal book list section hello*/}
       <section className="md:flex-row flex flex-col md:max-w-[1440px] mx-auto justify-around p-8 gap-4 h-[250px]">
         {/* API section, quote */}
         <div className="bg-gradient-to-r  from-[#333333] to-[#000000] w-full h-full md:w-1/2 rounded-2xl text-white px-4 justify-center flex flex-col ">
