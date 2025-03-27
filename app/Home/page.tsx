@@ -21,6 +21,7 @@ const Home: React.FC = () => {
             <Link href={"/Shop"}>Shop</Link>
             <Link href={"/View"}>View</Link>
             <Link href={"/Crud"}>MyShelf</Link>
+            <Link href={"/Practise"}>Practise</Link>
           </ul>
           <div className="flex gap-8 justify-center items-center">
             <img src="/Bell_nav.png" alt="" className=" h-5 w-5" />

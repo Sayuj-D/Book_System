@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { toast, ToastContainer, Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface Book {
   name: string;
@@ -38,14 +40,14 @@ const handleAddBook = (name: string, description: string) => {
     );
 
     if (isDuplicate) {
-      alert("This book already exists!");
+      toast.error("Book already exists!");
     } else {
       books.push(newBook);
       localStorage.setItem("books", JSON.stringify(books));
-      alert("Book added successfully!");
+      toast.success("Books added successfully!");
     }
   } else {
-    alert("Please fill up both fields!");
+    toast.warn("Please fill out bothe the fields");
   }
 };
 
@@ -151,10 +153,11 @@ const page: React.FC = () => {
             value={name}
             onChange={(e) => {
               // trim here
-              setName(e.target.value.trim());
+              setName(e.target.value);
             }}
           />
           <br />
+
           <textarea
             placeholder="Description"
             className="border-2 border-zinc-300 p-2 focus:outline-zinc-400"
@@ -167,7 +170,7 @@ const page: React.FC = () => {
           <button
             className="bg-black text-white font-semibold p-4 mt-4 hover:bg-[#333333] hover:shadow-xl duration-250 cursor-pointer"
             onClick={() => {
-              handleAddBook(name, description);
+              handleAddBook(name.trim(), description);
               setName("");
               setDescription("");
             }}
@@ -176,6 +179,19 @@ const page: React.FC = () => {
           </button>
         </form>
       </section>
+      <ToastContainer
+        position="top-right"
+        autoClose={4000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+        transition={Bounce}
+      />
     </>
   );
 };
