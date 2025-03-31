@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 
 import "@testing-library/jest-dom";
 
@@ -9,8 +9,8 @@ describe("Print Functions", () => {
   test("React component testing", () => {
     render(<Main_here />);
     // to remove the test case sensitivity
-    // const text = screen.getByText("This is Test"); // with case sensitivity
-    const text = screen.getByText(/This is test/i);
+    const text = screen.getByText("This is Test"); // with case sensitivity
+    // const text = screen.getByText(/This is test/i);
     const title = screen.getByTitle("This is a image"); // with case sensitivity
     expect(text).toBeInTheDocument();
     expect(title).toBeInTheDocument();
@@ -28,7 +28,7 @@ test("testing input field", () => {
   expect(check_input).toHaveAttribute("type", "text");
 });
 
-describe.only("UI testcase group", () => {
+describe("UI testcase group", () => {
   test("test case 1", () => {
     render(<Main_here />);
     const avaiable = screen.getByRole("textbox");

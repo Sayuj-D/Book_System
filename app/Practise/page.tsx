@@ -14,6 +14,7 @@ import Tost from "./tost"; // Import the tost component
 import Tic_tak from "./tic_tak";
 
 import Main_here from "@/Components/Main_here";
+import Testing from "@/Components/testing";
 
 // helper function
 const format_time = (time: string) => {
@@ -171,6 +172,7 @@ const page: React.FC = () => {
       <Tost />
       <Tic_tak />
       <Main_here />
+      <Testing />
     </>
   );
 };
