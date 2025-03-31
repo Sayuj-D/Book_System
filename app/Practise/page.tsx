@@ -13,6 +13,8 @@ import { get_time } from "@/utils/timeutil";
 import Tost from "./tost"; // Import the tost component
 import Tic_tak from "./tic_tak";
 
+import Main_here from "@/Components/Main_here";
+
 // helper function
 const format_time = (time: string) => {
   const [hrs, min, sec]: string[] = time.split(":");
@@ -168,6 +170,7 @@ const page: React.FC = () => {
       {/* Render the Tost component here */}
       <Tost />
       <Tic_tak />
+      <Main_here />
     </>
   );
 };
